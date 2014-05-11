@@ -7,7 +7,7 @@ module ThumbnailHoverEffect
 
 
     THUMBNAIL_TEMPLATE = [
-        '<div class="view-ff97e1e1-22d4-44cf-bf5d-ef1e26444a06 effect04">',
+        '<div class="view-ff97e1e1-22d4-44cf-bf5d-ef1e26444a06 effect02">',
         '<div>',
         '<span class="icon-emo-happy">##title##</span>',
         '<span class="icon-emo-happy">##description##</span>',
