@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ThumbnailHoverEffect::VERSION
   spec.authors       = ["gotqn"]
   spec.email         = ["george_27@abv.bg"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = 'Simple image hover effects generators for your application'
+  spec.summary       = ''
   spec.homepage      = ""
   spec.license       = "MIT"
 
