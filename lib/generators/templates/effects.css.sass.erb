@@ -1,0 +1,421 @@
+$slider_name: <%= get_file_name %>
+$slider_width: <%= get_width %>
+$slider_height: <%= get_height %>
+$slice_width: $slider_width/5
+$slice_width_fixed: $slice_width - 1
+
+.view-#{$slider_name}
+    width: #{$slider_width}px
+    height: #{$slider_height}px
+    margin: 10px
+    float: left
+    position: relative
+    border: 8px solid #fff
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.05)
+    background: #333
+    -webkit-perspective: 500px
+    -moz-perspective: 500px
+    -o-perspective: 500px
+    -ms-perspective: 500px
+    perspective: 500px
+
+    .slice
+        width: #{$slice_width}px
+        height: 100%
+        z-index: 100
+        -webkit-transform-style: preserve-3d
+        -moz-transform-style: preserve-3d
+        -o-transform-style: preserve-3d
+        -ms-transform-style: preserve-3d
+        transform-style: preserve-3d
+        -webkit-transform-origin: left center
+        -moz-transform-origin: left center
+        -o-transform-origin: left center
+        -ms-transform-origin: left center
+        transform-origin: left center
+        -webkit-transition: -webkit-transform 150ms ease-in-out
+        -moz-transition: -moz-transform 150ms ease-in-out
+        -o-transition: -o-transform 150ms ease-in-out
+        -ms-transition: -ms-transform 150ms ease-in-out
+        transition: transform 150ms ease-in-out
+
+    .overlay
+        width: #{$slice_width}px
+        height: 100%
+        opacity: 0
+        position: absolute
+        -webkit-transition: opacity 150ms ease-in-out
+        -moz-transition: opacity 150ms ease-in-out
+        -o-transition: opacity 150ms ease-in-out
+        -ms-transition: opacity 150ms ease-in-out
+        transition: opacity 150ms ease-in-out
+
+    img
+        position: absolute
+        z-index: 0
+        -webkit-transition: left 0.3s ease-in-out
+        -o-transition: left 0.3s ease-in-out
+        -moz-transition: left 0.3s ease-in-out
+        -ms-transition: left 0.3s ease-in-out
+        transition: left 0.3s ease-in-out
+
+    //information box
+    div:first-child
+        width: 50%
+        height: 100%
+        position: absolute
+        right: 0
+        background: #666
+        z-index: 0
+
+    //first slice
+    > div:nth-child(2)
+        background-position: 0px 0px
+        background-color: green !important
+        div
+            -webkit-transform: translate3d(#{$slice_width}px,0,0)
+            -moz-transform: translate3d(#{$slice_width}px,0,0)
+            -o-transform: translate3d(#{$slice_width}px,0,0)
+            -ms-transform: translate3d(#{$slice_width}px,0,0)
+            transform: translate3d(#{$slice_width}px,0,0)
+        //second slice
+        > div
+            background-position: -#{$slice_width}px 0px
+            //third slice
+            > div
+                background-position: -#{$slice_width*2}px 0px
+                //forth slice
+                > div
+                    background-position: -#{$slice_width*3}px 0px
+                    //fifth slice
+                    > div
+                        background-position: -#{$slice_width*4}px 0px
+
+    <% if should_be_effect_rendered('effect01') %>
+    &.effect01
+        //first slice
+        > div:nth-child(2)
+            > .overlay
+                background: -moz-linear-gradient(right, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%)
+                background: -webkit-linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%)
+                background: -o-linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%)
+                background: -ms-linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%)
+                background: linear-gradient(right, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%)
+            //second slice
+            > div
+                background-position: -#{$slice_width}px 0px
+                > .overlay
+                    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%)
+                    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%)
+                    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%)
+                    background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%)
+                    background: linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.2) 100%)
+                //third slice
+                > div
+                    background-position: -#{$slice_width*2}px 0px
+                    > .overlay
+                        background: -moz-linear-gradient(right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%)
+                        background: -webkit-linear-gradient(right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%)
+                        background: -o-linear-gradient(right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%)
+                        background: -ms-linear-gradient(right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%)
+                        background: linear-gradient(right, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.2) 100%)
+                    //forth slice
+                    > div
+                        background-position: -#{$slice_width*3}px 0px
+                        > .overlay
+                            background: -moz-linear-gradient(left, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)
+                            background: -webkit-linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%)
+                            background: -o-linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%)
+                            background: -ms-linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%)
+                            background: linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0) 100%)
+                        //fifth slice
+                        > div
+                            background-position: -#{$slice_width*4}px 0px
+                            > .overlay
+                                background: -moz-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%)
+                                background: -webkit-linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%)
+                                background: -o-linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%)
+                                background: -ms-linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%)
+                                background: linear-gradient(left, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%)
+        //animations settings
+        &:hover
+            .overlay
+                opacity: 1
+            //first slice
+            > div:nth-child(2)
+                //second slice
+                > div
+                    -webkit-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,-45deg)
+                    -moz-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,-45deg)
+                    -o-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,-45deg)
+                    -ms-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,-45deg)
+                    transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,-45deg)
+                    //third slice
+                    > div
+                        -webkit-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,90deg)
+                        -moz-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,90deg)
+                        -o-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,90deg)
+                        -ms-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,90deg)
+                        transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,90deg)
+                        //forth slice
+                        > div
+                            -webkit-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,-90deg)
+                            -moz-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,-90deg)
+                            -o-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,-90deg)
+                            -ms-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,-90deg)
+                            transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,-90deg)
+                            //fifth slice
+                            > div
+                                -webkit-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,90deg)
+                                -moz-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,90deg)
+                                -o-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,90deg)
+                                -ms-transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,90deg)
+                                transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,90deg)
+    <% end %>
+
+    <% if should_be_effect_rendered('effect02') %>
+    &.effect02
+        -webkit-perspective: 800px
+        -moz-perspective: 800px
+        -o-perspective: 800px
+        -ms-perspective: 800px
+        perspective: 800px
+        //information box
+        div:first-child
+            background: #0a0a0a
+            background: -moz-linear-gradient(left, #0a0a0a 0%, #666666 100%)
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, #0a0a0a), color-stop(100%, #666666))
+            background: -webkit-linear-gradient(left, #0a0a0a 0%, #666666 100%)
+            background: -o-linear-gradient(left, #0a0a0a 0%, #666666 100%)
+            background: -ms-linear-gradient(left, #0a0a0a 0%, #666666 100%)
+            background: linear-gradient(left, #0a0a0a 0%, #666666 100%)
+        //first slice
+        > div:nth-child(2)
+            //second slice
+            > div
+                //third slice
+                > div
+                    //forth slice
+                    > div
+                        > .overlay
+                            background: -moz-linear-gradient(right, rgba(0, 0, 0, 0.3) 0%, transparent 100%)
+                            background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.3) 0%, transparent 100%)
+                            background: -o-linear-gradient(right, rgba(0, 0, 0, 0.3) 0%, transparent 100%)
+                            background: -ms-linear-gradient(right, rgba(0, 0, 0, 0.3) 0%, transparent 100%)
+                            background: linear-gradient(right, rgba(0, 0, 0, 0.3) 0%, transparent 100%)
+                        //fifth slice
+                        > div
+                            > .overlay
+                                background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, transparent 100%)
+                                background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, transparent 100%)
+                                background: -o-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, transparent 100%)
+                                background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, transparent 100%)
+                                background: linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, transparent 100%)
+        &:hover
+            //first slice
+            > div:nth-child(2)
+                -webkit-transition-delay: 200ms
+                -moz-transition-delay: 200ms
+                -o-transition-delay: 200ms
+                -ms-transition-delay: 200ms
+                transition-delay: 200ms
+                -webkit-transform: rotate3d(0, 1, 0, -3deg)
+                -moz-transform: rotate3d(0, 1, 0, -3deg)
+                -o-transform: rotate3d(0, 1, 0, -3deg)
+                -ms-transform: rotate3d(0, 1, 0, -3deg)
+                transform: rotate3d(0, 1, 0, -3deg)
+                //second slice
+                > div
+                    -webkit-transition-delay: 150ms
+                    -moz-transition-delay: 150ms
+                    -o-transition-delay: 150ms
+                    -ms-transition-delay: 150ms
+                    transition-delay: 150ms
+                    -webkit-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -10deg)
+                    -moz-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -10deg)
+                    -o-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -10deg)
+                    -ms-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -10deg)
+                    transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -10deg)
+                    //third slice
+                    > div
+                        -webkit-transition-delay: 100ms
+                        -moz-transition-delay: 100ms
+                        -o-transition-delay: 100ms
+                        -ms-transition-delay: 100ms
+                        transition-delay: 100ms
+                        -webkit-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -16deg)
+                        -moz-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -16deg)
+                        -o-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -16deg)
+                        -ms-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -16deg)
+                        transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -16deg)
+                        //forth slice
+                        > div
+                            -webkit-transition-delay: 50ms
+                            -moz-transition-delay: 50ms
+                            -o-transition-delay: 50ms
+                            -ms-transition-delay: 50ms
+                            transition-delay: 50ms
+                            -webkit-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -30deg)
+                            -moz-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -30deg)
+                            -o-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -30deg)
+                            -ms-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -30deg)
+                            transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -30deg)
+                            //fifth slice
+                            > div
+                                -webkit-transform: translate3d(#{$slice_width}px, 0, 0) rotate3d(0, 1, 0, -42deg)
+                                -moz-transform: translate3d(#{$slice_width}px, 0, 0) rotate3d(0, 1, 0, -42deg)
+                                -o-transform: translate3d(#{$slice_width}px, 0, 0) rotate3d(0, 1, 0, -42deg)
+                                -ms-transform: translate3d(#{$slice_width}px, 0, 0) rotate3d(0, 1, 0, -42deg)
+                                transform: translate3d(#{$slice_width}px, 0, 0) rotate3d(0, 1, 0, -42deg)
+    <% end %>
+
+    <% if should_be_effect_rendered('effect03') %>
+    &.effect03
+        -webkit-perspective: 1000px
+        -moz-perspective: 1000px
+        -o-perspective: 1000px
+        -ms-perspective: 1000px
+        perspective: 1000px
+        //first slice
+        > div:nth-child(2)
+            > .overlay
+                background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
+                background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
+                background: -o-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
+                background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
+                background: linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
+            //second slice
+            > div
+                //third slice
+                > div
+                    //forth slice
+                    > div
+                        //fifth slice
+                        > div
+                            > .overlay
+                                background: -moz-linear-gradient(right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%)
+                                background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%)
+                                background: -o-linear-gradient(right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%)
+                                background: -ms-linear-gradient(right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%)
+                                background: linear-gradient(right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%)
+        &:hover
+            //first slice
+            > div:nth-child(2)
+                -webkit-transform: rotate3d(0, 1, 0, -55deg)
+                -moz-transform: rotate3d(0, 1, 0, -55deg)
+                -o-transform: rotate3d(0, 1, 0, -55deg)
+                -ms-transform: rotate3d(0, 1, 0, -55deg)
+                transform: rotate3d(0, 1, 0, -55deg)
+                //second slice
+                > div
+                    -webkit-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 20deg)
+                    -moz-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 20deg)
+                    -o-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 20deg)
+                    -ms-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 20deg)
+                    transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 20deg)
+                    //third slice
+                    > div
+                        -webkit-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 30deg)
+                        -moz-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 30deg)
+                        -o-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 30deg)
+                        -ms-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 30deg)
+                        transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 30deg)
+                        //forth slice
+                        > div
+                            -webkit-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 40deg)
+                            -moz-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 40deg)
+                            -o-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 40deg)
+                            -ms-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 40deg)
+                            transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 40deg)
+                            //fifth slice
+                            > div
+                                -webkit-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 20deg)
+                                -moz-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 20deg)
+                                -o-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 20deg)
+                                -ms-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 20deg)
+                                transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 20deg)
+    <% end %>
+
+    <% if should_be_effect_rendered('effect04') %>
+    &.effect04
+        -webkit-perspective: 1050px
+        -moz-perspective: 1050px
+        -o-perspective: 1050px
+        -ms-perspective: 1050px
+        perspective: 1050px
+        //information box
+        div:first-child
+            background: #0a0a0a
+            background: -moz-linear-gradient(left, #0a0a0a 0%, #666666 100%)
+            background: -webkit-gradient(linear, left top, right top, color-stop(0%, #0a0a0a), color-stop(100%, #666666))
+            background: -webkit-linear-gradient(left, #0a0a0a 0%, #666666 100%)
+            background: -o-linear-gradient(left, #0a0a0a 0%, #666666 100%)
+            background: -ms-linear-gradient(left, #0a0a0a 0%, #666666 100%)
+            background: linear-gradient(left, #0a0a0a 0%, #666666 100%)
+        div
+            -webkit-transition: all 150ms ease-in-out
+            -moz-transition: all 0.3s ease-in-out
+            -o-transition: all 0.3s ease-in-out
+            -ms-transition: all 0.3s ease-in-out
+            transition: all 0.3s ease-in-out
+        //first slice
+        > div:nth-child(2)
+            //second slice
+            > div
+                > .overlay
+                    background: -moz-linear-gradient(right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%)
+                    background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%)
+                    background: -o-linear-gradient(right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%)
+                    background: -ms-linear-gradient(right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%)
+                    background: linear-gradient(right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%)
+                //third slice
+                > div
+                    > .overlay
+                        background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%)
+                        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%)
+                        background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%)
+                        background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%)
+                        background: linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%)
+                    //forth slice
+                    > div
+                        > .overlay
+                            background: -moz-linear-gradient(right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background: -o-linear-gradient(right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background: -ms-linear-gradient(right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%)
+                            background: linear-gradient(right, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%)
+                        //fifth slice
+                        > div
+                            > .overlay
+                                background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%)
+                                background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%)
+                                background: -o-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%)
+                                background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%)
+                                background: linear-gradient(left, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%)
+        &:hover
+            //first slice
+            > div:nth-child(2)
+                //second slice
+                > div
+                    //third slice
+                    > div
+                        -webkit-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -55deg)
+                        -moz-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -55deg)
+                        -o-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -55deg)
+                        -ms-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -55deg)
+                        transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -55deg)
+                        //forth slice
+                        > div
+                            -webkit-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 110deg)
+                            -moz-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 110deg)
+                            -o-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 110deg)
+                            -ms-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 110deg)
+                            transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 110deg)
+                            //fifth slice
+                            > div
+                                -webkit-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -110deg)
+                                -moz-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -110deg)
+                                -o-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -110deg)
+                                -ms-transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -110deg)
+                                transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, -110deg)
+    <% end %>
