@@ -9,7 +9,7 @@ module ThumbnailHoverEffect
     # thumbnail effect template
     THUMBNAIL_TEMPLATE =
     "
-    <div class=\"view-#{model.class.to_s.underscore} effect02\">
+    <div class=\"view-effect01 effect01\">
       <div>
       <span class=\"icon-emo-happy\">##title##</span>
       <span class=\"icon-emo-happy\">##description##</span>
