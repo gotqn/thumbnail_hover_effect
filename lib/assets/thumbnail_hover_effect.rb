@@ -1,4 +1,4 @@
-require 'thumbnail_hover_effect/version'
+require 'assets/thumbnail_hover_effect/version'
 require 'thumbnail_hover_effect/engine'
 require 'thumbnail_hover_effect/image'
 
