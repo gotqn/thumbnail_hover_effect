@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class <%= get_class_name %> < ThumbnailHoverEffect::Image::Base
+class <%= get_class_name %> < ThumbnailHoverEffect::Image
 
   # Provide a default URL as a default if there hasn't been a correct one
   # IMAGE_NOT_FOUND = '/images/no-image-found.jpg'

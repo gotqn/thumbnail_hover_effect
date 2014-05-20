@@ -6,31 +6,7 @@ module ThumbnailHoverEffect
     IMAGE_NOT_FOUND = '/images/no-image-found.jpg'
 
     # thumbnail effect template
-    THUMBNAIL_TEMPLATE =
-    "
-    <div class=\"view-effect01 effect01\">
-      <div>
-      <span class=\"icon-emo-happy\">##title##</span>
-      <span class=\"icon-emo-happy\">##description##</span>
-      <a href=\"##url##\"><span aria-hidden=\"true\" class=\"icon-emo-happy\"></span></a>
-      </div>
-      <div class=\"slice\" style=\"background-image: url(##url##);\">
-        <span class=\"overlay\"></span>
-        <div class=\"slice\" style=\"background-image: url(##url##);\">
-          <span class=\"overlay\"></span>
-          <div class=\"slice\" style=\"background-image: url(##url##);\">
-            <span class=\"overlay\"></span>
-            <div class=\"slice\" style=\"background-image: url(##url##);\">
-              <span class=\"overlay\"></span>
-              <div class=\"slice\" style=\"background-image: url(##url##);\">
-                <span class=\"overlay\"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    "
+
 
     # class attributes
     attr_accessor :url,         # image source url
