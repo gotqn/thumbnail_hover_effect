@@ -6,8 +6,8 @@ module ThumbnailHoverEffect
     IMAGE_NOT_FOUND = '/images/no-image-found.jpg'
 
     # class attributes
-    attr_accessor :url,          # image source url
-                  :attributes,   # data attributes
+    attr_accessor :url,         # image source url
+                  :attributes   # data attributes
 
     # validating input parameters and using defaults if necessary
     def initialize(parameters = {})
