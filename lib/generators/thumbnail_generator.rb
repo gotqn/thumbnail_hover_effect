@@ -7,10 +7,6 @@ class ThumbnailGenerator < Rails::Generators::Base
   argument :effects, type: 'hash', default: {effect01: true, effect02: true, effect03: true, effect04: true}
 
   def generate_layout
-    #copy_file "stylesheet.css", "public/stylesheets/#{file_name}.css"
-    #template "layout.html.erb", "app/views/layouts/#{file_name}.html.erb"
-    #template "uploader.rb", "app/uploaders/#{file_name}_uploader.rb"
-
     template 'thumbnail.rb', "app/thumbnails/#{get_file_name}.rb"
     template 'effects.css.sass.erb', "vendor/assets/stylesheets/thumbnails/#{get_file_name}.css.sass"
   end
@@ -34,7 +30,7 @@ class ThumbnailGenerator < Rails::Generators::Base
     end
 
     def should_be_effect_rendered(param)
-      effects[param]
+      effects[param.to_sym]
     end
 
     def default_effect
