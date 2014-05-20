@@ -5,12 +5,9 @@ module ThumbnailHoverEffect
     # image use if such is not specified
     IMAGE_NOT_FOUND = '/images/no-image-found.jpg'
 
-    # thumbnail effect template
-
-
     # class attributes
-    attr_accessor :url,         # image source url
-                  :attributes   # data attributes
+    attr_accessor :url,          # image source url
+                  :attributes,   # data attributes
 
     # validating input parameters and using defaults if necessary
     def initialize(parameters = {})
@@ -30,7 +27,7 @@ module ThumbnailHoverEffect
     def render(parameters = {})
 
       has_thumbnail = parameters.fetch(:has_thumbnail, nil)
-      thumbnail_template = parameters.fetch(:thumbnail_template, THUMBNAIL_TEMPLATE).dup
+      thumbnail_template = self.get_template #parameters.fetch(:thumbnail_template, THUMBNAIL_TEMPLATE).dup
 
       if has_thumbnail
         @attributes.map { |key, value| thumbnail_template["##{key}##"] &&= value }
@@ -39,6 +36,35 @@ module ThumbnailHoverEffect
         self.to_s
       end
     end
+
+    # returns the html template
+    def get_template
+      "
+      <div class=\"view-image effect01\">
+        <div>
+        <span class=\"icon-emo-happy\">##title##</span>
+        <span class=\"icon-emo-happy\">##description##</span>
+        <a href=\"##url##\"><span aria-hidden=\"true\" class=\"icon-emo-happy\"></span></a>
+        </div>
+        <div class=\"slice\" style=\"background-image: url(##url##);\">
+          <span class=\"overlay\"></span>
+          <div class=\"slice\" style=\"background-image: url(##url##);\">
+            <span class=\"overlay\"></span>
+            <div class=\"slice\" style=\"background-image: url(##url##);\">
+              <span class=\"overlay\"></span>
+              <div class=\"slice\" style=\"background-image: url(##url##);\">
+                <span class=\"overlay\"></span>
+                <div class=\"slice\" style=\"background-image: url(##url##);\">
+                  <span class=\"overlay\"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      "
+    end
+
 
   end
 end
