@@ -27,7 +27,7 @@ module ThumbnailHoverEffect
     def render(parameters = {})
 
       has_thumbnail = parameters.fetch(:has_thumbnail, true)
-      thumbnail_template = self.get_template #parameters.fetch(:thumbnail_template, THUMBNAIL_TEMPLATE).dup
+      thumbnail_template = self.get_template
 
       if has_thumbnail
         @attributes.map { |key, value| thumbnail_template["##{key}##"] &&= value }
