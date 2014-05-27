@@ -10,9 +10,11 @@ class <%= get_class_name %> < ThumbnailHoverEffect::Image
     "
        <div class=\"view-<%= get_file_name %> <%= default_effect %>\">
         <div>
-          <span class=\"icon-thumbs-up\">##likes##</span>
-          <span class=\"icon-thumbs-down\">##dislikes##</span>
-          <a href=\"##url##\"><span aria-hidden=\"true\" class=\"icon-print\"></span></a>
+          <span style=\"position: absolute;right: 5px;top: 10px;\"  class=\"icon-thumbs-up\">##likes##</span>
+          <span style=\"position: absolute;right: 5px;top: 30px;\"class=\"icon-thumbs-down\">##dislikes##</span>
+          <a style=\"position: absolute;bottom: 10px;right: 5px;\" href=\"##url##\">
+            <span aria-hidden=\"true\" class=\"icon-print\"></span>
+          </a>
         </div>
         <div class=\"slice\" style=\"background-image: url(##url##);\">
           <span class=\"overlay\"></span>
