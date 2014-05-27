@@ -26,14 +26,14 @@ module ThumbnailHoverEffect
     # rendering image with thumbnail effect applied
     def render(parameters = {})
 
-      has_thumbnail = parameters.fetch(:has_thumbnail, nil)
+      has_thumbnail = parameters.fetch(:has_thumbnail, true)
       thumbnail_template = self.get_template #parameters.fetch(:thumbnail_template, THUMBNAIL_TEMPLATE).dup
 
       if has_thumbnail
         @attributes.map { |key, value| thumbnail_template["##{key}##"] &&= value }
-        thumbnail_template.gsub!('##url##', @url)
+        thumbnail_template.gsub!('##url##', @url).html_safe
       else
-        self.to_s
+        self.to_s.html_safe
       end
     end
 
