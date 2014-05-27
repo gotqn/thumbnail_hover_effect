@@ -10,9 +10,9 @@ class <%= get_class_name %> < ThumbnailHoverEffect::Image
     "
        <div class=\"view-<%= get_file_name %> <%= default_effect %>\">
         <div>
-        <span class=\"icon-emo-happy\">##title##</span>
-        <span class=\"icon-emo-happy\">##description##</span>
-        <a href=\"##url##\"><span aria-hidden=\"true\" class=\"icon-emo-happy\"></span></a>
+          <span class=\"icon-thumbs-up\">##likes##</span>
+          <span class=\"icon-thumbs-down\">##dislikes##</span>
+          <a href=\"##url##\"><span aria-hidden=\"true\" class=\"icon-print\"></span></a>
         </div>
         <div class=\"slice\" style=\"background-image: url(##url##);\">
           <span class=\"overlay\"></span>
