@@ -22,19 +22,19 @@ class ThumbnailGenerator < Rails::Generators::Base
     end
 
     def get_width
-      width
+      options.width
     end
 
     def get_height
-      height
+      options.height
     end
 
     def should_be_effect_rendered(param)
-      effects[param.to_sym]
+      options.effects[param.to_sym]
     end
 
     def default_effect
-      effects.key(true)
+      options.effects.key(true)
     end
 
 end
