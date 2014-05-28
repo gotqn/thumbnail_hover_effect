@@ -34,7 +34,7 @@ is generating the files below:
    * app/thumbnails/class_name.rb
    * vendor/assets/stylesheets/thumbnails/class_name.css.sass
 
-__Loading thumnbail css and fonts__
+__Loading thumbnail css and fonts__
 
 Add the following lines in your *application.css* file:
 

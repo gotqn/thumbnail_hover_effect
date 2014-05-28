@@ -30,7 +30,7 @@ module ThumbnailHoverEffect
       thumbnail_template = self.get_template
 
       if has_thumbnail
-        @attributes.map { |key, value| thumbnail_template["##{key}##"] &&= value }
+        @attributes.map { |key, value| thumbnail_template["###{key}##"] &&= value }
         thumbnail_template.gsub!('##url##', @url).html_safe
       else
         self.to_s.html_safe
