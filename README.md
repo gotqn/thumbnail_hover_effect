@@ -60,6 +60,16 @@ Note:
  
 ### Custom Usage
 
+####Thumbnail Effects#####
+
+There are four built-in thumbnail effects. By default, the generator is generating *CSS* for all of them.
+
+How to generate *CSS* for specific thumbnail effect only?
+
+How to generate *CSS* for several thumbnail effects?
+
+How to switch between thumbnail effects?
+
 
 
 ## Contributing

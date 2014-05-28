@@ -2,9 +2,9 @@ class ThumbnailGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates', __FILE__)
 
   argument :name, type: 'string', required: true
-  argument :width, type: 'numeric', default: 300
-  argument :height, type: 'numeric', default: 216
-  argument :effects, type: 'hash', default: {effect01: true, effect02: true, effect03: true, effect04: true}
+  method_option :width, type: 'numeric', default: 300
+  method_option :height, type: 'numeric', default: 216
+  method_option :effects, type: 'hash', default: {effect01: true, effect02: true, effect03: true, effect04: true}
 
   def generate_layout
     template 'thumbnail.rb', "app/thumbnails/#{get_file_name}.rb"
