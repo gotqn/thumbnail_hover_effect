@@ -8,7 +8,7 @@ class <%= get_class_name %> < ThumbnailHoverEffect::Image
   # returns the html template
   def get_template
     "
-       <div class=\"view-<%= get_file_name %> <%= default_effect %>\">
+       <div class=\"view-<%= get_file_name %> effect0<%= default_effect %>\">
         <div>
           <span style=\"position: absolute;right: 5px;top: 10px;\"  class=\"icon-thumbs-up\">##likes##</span>
           <span style=\"position: absolute;right: 5px;top: 30px;\"class=\"icon-thumbs-down\">##dislikes##</span>

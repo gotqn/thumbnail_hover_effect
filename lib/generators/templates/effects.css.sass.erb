@@ -91,7 +91,7 @@ $slice_width_fixed: $slice_width - 1
                     > div
                         background-position: -#{$slice_width*4}px 0px
 
-    <% if should_be_effect_rendered('effect01') %>
+    <% if should_be_effect_rendered(1) %>
     &.effect01
         //first slice
         > div:nth-child(2)
@@ -173,7 +173,7 @@ $slice_width_fixed: $slice_width - 1
                                 transform: translate3d(#{$slice_width_fixed}px,0,0) rotate3d(0,1,0,90deg)
     <% end %>
 
-    <% if should_be_effect_rendered('effect02') %>
+    <% if should_be_effect_rendered(2) %>
     &.effect02
         -webkit-perspective: 800px
         -moz-perspective: 800px
@@ -269,7 +269,7 @@ $slice_width_fixed: $slice_width - 1
                                 transform: translate3d(#{$slice_width}px, 0, 0) rotate3d(0, 1, 0, -42deg)
     <% end %>
 
-    <% if should_be_effect_rendered('effect03') %>
+    <% if should_be_effect_rendered(3) %>
     &.effect03
         -webkit-perspective: 1000px
         -moz-perspective: 1000px
@@ -336,7 +336,7 @@ $slice_width_fixed: $slice_width - 1
                                 transform: translate3d(#{$slice_width_fixed}px, 0, 0) rotate3d(0, 1, 0, 20deg)
     <% end %>
 
-    <% if should_be_effect_rendered('effect04') %>
+    <% if should_be_effect_rendered(4) %>
     &.effect04
         -webkit-perspective: 1050px
         -moz-perspective: 1050px
