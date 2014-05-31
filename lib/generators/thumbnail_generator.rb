@@ -34,24 +34,24 @@ class ThumbnailGenerator < Rails::Generators::Base
       case get_font_size
         when 12
           begin
-            copy_file 'fonts/font_size_12/icon.eot', 'vendor/assets/fonts/thumbnails/font_size_12/icon.eot'
-            copy_file 'fonts/font_size_12/icon.svg', 'vendor/assets/fonts/thumbnails/font_size_12/icon.svg'
-            copy_file 'fonts/font_size_12/icon.ttf', 'vendor/assets/fonts/thumbnails/font_size_12/icon.ttf'
-            copy_file 'fonts/font_size_12/icon.woff', 'vendor/assets/fonts/thumbnails/font_size_12/icon.woff'
+            copy_file 'fonts/font_size_12/icon12.eot', 'vendor/assets/fonts/thumbnails/font_size_12/icon12.eot'
+            copy_file 'fonts/font_size_12/icon12.svg', 'vendor/assets/fonts/thumbnails/font_size_12/icon12.svg'
+            copy_file 'fonts/font_size_12/icon12.ttf', 'vendor/assets/fonts/thumbnails/font_size_12/icon12.ttf'
+            copy_file 'fonts/font_size_12/icon12.woff', 'vendor/assets/fonts/thumbnails/font_size_12/icon12.woff'
           end
         when 18
           begin
-            copy_file 'fonts/font_size_18/icon.eot', 'vendor/assets/fonts/thumbnails/font_size_18/icon.eot'
-            copy_file 'fonts/font_size_18/icon.svg', 'vendor/assets/fonts/thumbnails/font_size_18/icon.svg'
-            copy_file 'fonts/font_size_18/icon.ttf', 'vendor/assets/fonts/thumbnails/font_size_18/icon.ttf'
-            copy_file 'fonts/font_size_18/icon.woff', 'vendor/assets/fonts/thumbnails/font_size_18/icon.woff'
+            copy_file 'fonts/font_size_18/icon18.eot', 'vendor/assets/fonts/thumbnails/font_size_18/icon18.eot'
+            copy_file 'fonts/font_size_18/icon18.svg', 'vendor/assets/fonts/thumbnails/font_size_18/icon18.svg'
+            copy_file 'fonts/font_size_18/icon18.ttf', 'vendor/assets/fonts/thumbnails/font_size_18/icon18.ttf'
+            copy_file 'fonts/font_size_18/icon18.woff', 'vendor/assets/fonts/thumbnails/font_size_18/icon18.woff'
           end
         when 24
           begin
-            copy_file 'fonts/font_size_24/icon.eot', 'vendor/assets/fonts/thumbnails/font_size_24/icon.eot'
-            copy_file 'fonts/font_size_24/icon.svg', 'vendor/assets/fonts/thumbnails/font_size_24/icon.svg'
-            copy_file 'fonts/font_size_24/icon.ttf', 'vendor/assets/fonts/thumbnails/font_size_24/icon.ttf'
-            copy_file 'fonts/font_size_24/icon.woff', 'vendor/assets/fonts/thumbnails/font_size_24/icon.woff'
+            copy_file 'fonts/font_size_24/icon24.eot', 'vendor/assets/fonts/thumbnails/font_size_24/icon24.eot'
+            copy_file 'fonts/font_size_24/icon24.svg', 'vendor/assets/fonts/thumbnails/font_size_24/icon24.svg'
+            copy_file 'fonts/font_size_24/icon24.ttf', 'vendor/assets/fonts/thumbnails/font_size_24/icon24.ttf'
+            copy_file 'fonts/font_size_24/icon24.woff', 'vendor/assets/fonts/thumbnails/font_size_24/icon24.woff'
           end
         else
           # the same as options[:icon_size] = 12
