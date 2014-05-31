@@ -89,9 +89,9 @@ class ThumbnailGenerator < Rails::Generators::Base
     def get_font_size
       case options[:icon_size]
         when 12, 18, 24
-          options[:icon_size]
+          return options[:icon_size]
         else
-          12
+          return 12
       end
     end
 
