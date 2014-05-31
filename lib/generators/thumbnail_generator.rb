@@ -90,7 +90,8 @@ class ThumbnailGenerator < Rails::Generators::Base
       case options[:icon_size]
         when 12, 18, 24
           options[:icon_size]
-        else 12
+        else
+          12
       end
     end
 
