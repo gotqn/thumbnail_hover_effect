@@ -32,34 +32,14 @@ class ThumbnailGenerator < Rails::Generators::Base
       copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.css",
                 "vendor/assets/stylesheets/thumbnails/#{get_file_name}/icon#{get_font_size}.css"
 
-      @current_font_size = get_font_size
-      case @current_font_size
-        when 12
-          begin
-            copy_file 'fonts/font_size_12/icon12.eot', 'vendor/assets/fonts/thumbnails/font_size_12/icon12.eot'
-            copy_file 'fonts/font_size_12/icon12.svg', 'vendor/assets/fonts/thumbnails/font_size_12/icon12.svg'
-            copy_file 'fonts/font_size_12/icon12.ttf', 'vendor/assets/fonts/thumbnails/font_size_12/icon12.ttf'
-            copy_file 'fonts/font_size_12/icon12.woff', 'vendor/assets/fonts/thumbnails/font_size_12/icon12.woff'
-          end
-        when 18
-          begin
-            copy_file 'fonts/font_size_18/icon18.eot', 'vendor/assets/fonts/thumbnails/font_size_18/icon18.eot'
-            copy_file 'fonts/font_size_18/icon18.svg', 'vendor/assets/fonts/thumbnails/font_size_18/icon18.svg'
-            copy_file 'fonts/font_size_18/icon18.ttf', 'vendor/assets/fonts/thumbnails/font_size_18/icon18.ttf'
-            copy_file 'fonts/font_size_18/icon18.woff', 'vendor/assets/fonts/thumbnails/font_size_18/icon18.woff'
-          end
-        when 24
-          begin
-            copy_file 'fonts/font_size_24/icon24.eot', 'vendor/assets/fonts/thumbnails/font_size_24/icon24.eot'
-            copy_file 'fonts/font_size_24/icon24.svg', 'vendor/assets/fonts/thumbnails/font_size_24/icon24.svg'
-            copy_file 'fonts/font_size_24/icon24.ttf', 'vendor/assets/fonts/thumbnails/font_size_24/icon24.ttf'
-            copy_file 'fonts/font_size_24/icon24.woff', 'vendor/assets/fonts/thumbnails/font_size_24/icon24.woff'
-          end
-        else
-          begin
-            # the same as options[:icon_size] = 12
-          end
-      end
+      copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.eot",
+                "vendor/assets/fonts/thumbnails/font_size_#{get_font_size}/icon#{get_font_size}.eot"
+      copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.svg",
+                "vendor/assets/fonts/thumbnails/font_size_#{get_font_size}/icon#{get_font_size}.svg"
+      copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.ttf",
+                "vendor/assets/fonts/thumbnails/font_size_#{get_font_size}/icon#{get_font_size}.ttf"
+      copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.woff",
+                "vendor/assets/fonts/thumbnails/font_size_#{get_font_size}/icon#{get_font_size}.woff"
     end
   end
 
