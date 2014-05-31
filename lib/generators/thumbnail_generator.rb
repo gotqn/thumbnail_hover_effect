@@ -1,6 +1,8 @@
 class ThumbnailGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates', __FILE__)
 
+  desc  'Generates ruby class and css classes for thumbnail 3D hover effects'
+
   argument :name, type: 'string', required: true,
            desc: 'specifies generated ruby class and css class names'
 
@@ -37,7 +39,7 @@ class ThumbnailGenerator < Rails::Generators::Base
     end
 
     def should_be_effect_rendered(param)
-      options.effects.include? param
+      options[:effects].include? param
     end
 
     def default_effect

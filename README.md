@@ -1,6 +1,7 @@
 # ThumbnailHoverEffect
 
-Introduces simple image thumbnail 3D hover effects using CSS 3D transforms. The idea is inspired by [this greate codedrops article] (http://tympanus.net/codrops/2012/06/18/3d-thumbnail-hover-effects/ code drops article).
+Introduces simple image thumbnail 3D hover effects using CSS 3D transforms.
+The idea is inspired by [this greate codedrops article] (http://tympanus.net/codrops/2012/06/18/3d-thumbnail-hover-effects/ code drops article).
 
 
 ## Installation
