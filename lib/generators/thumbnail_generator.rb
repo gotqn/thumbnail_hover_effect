@@ -1,10 +1,17 @@
 class ThumbnailGenerator < Rails::Generators::Base
   source_root File.expand_path('../templates', __FILE__)
 
-  argument :name, type: 'string', required: true
-  class_option :width, type: 'numeric', default: 300, aliases: '-w'
-  class_option :height, type: 'numeric', default: 216, aliases: '-h'
-  class_option :effects, type: 'array', default: [1, 2, 3, 4], aliases: '-e'
+  argument :name, type: 'string', required: true,
+           desc: 'specifies generated ruby class and css class names'
+
+  class_option :width, type: 'numeric', default: 300, aliases: '-w',
+               desc: 'specifies image width'
+
+  class_option :height, type: 'numeric', default: 216, aliases: '-h',
+               desc: 'specifies image height'
+
+  class_option :effects, type: 'array', default: [1, 2, 3, 4], aliases: '-e',
+               desc: 'specifies for which of the effects css classes are generated'
 
   def generate_layout
     template 'thumbnail.rb', "app/thumbnails/#{get_file_name}.rb"
