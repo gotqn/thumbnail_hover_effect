@@ -18,7 +18,7 @@ class ThumbnailGenerator < Rails::Generators::Base
   class_option :icons_size, type: 'numeric', default: 12, aliases: '-fs',
                desc: 'specifies the font icon size'
 
-  class_option :disable_icons, type: 'boolean', default: false, aliases: '-di',
+  class_option :enable_icons, type: 'boolean', default: true, aliases: '-ei',
                desc: 'disables icons files generation'
 
   def generate_layout
@@ -28,7 +28,7 @@ class ThumbnailGenerator < Rails::Generators::Base
     template 'effects.css.sass.erb', "vendor/assets/stylesheets/thumbnails/#{get_file_name}/#{get_file_name}.css.sass"
 
     # additional functionality - generation font icons
-    unless options[:disable_icons]
+    if options[:enable_icons]
       copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.css",
                 "vendor/assets/stylesheets/thumbnails/#{get_file_name}/icon#{get_font_size}.css"
 
