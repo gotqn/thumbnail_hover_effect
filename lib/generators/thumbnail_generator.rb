@@ -29,8 +29,33 @@ class ThumbnailGenerator < Rails::Generators::Base
 
     # additional functionality - generation font icons
     unless options[:disable_icons]
-      copy_file 'font_icons.css', "vendor/assets/stylesheets/thumbnails/#{get_file_name}/font_icons.css"
-      #copy_file 'font_icons.css', "vendor/assets/fonts/thumbnails/#{get_file_name}/font_icons.css"
+      template 'font_icons.css.erb', "vendor/assets/stylesheets/thumbnails/#{get_file_name}/font_icons.css"
+
+      case get_font_size
+        when 12
+          begin
+            copy_file 'fonts/font_size_12/icon.eot', 'vendor/assets/fonts/thumbnails/font_size_12/icon.eot'
+            copy_file 'fonts/font_size_12/icon.svg', 'vendor/assets/fonts/thumbnails/font_size_12/icon.svg'
+            copy_file 'fonts/font_size_12/icon.ttf', 'vendor/assets/fonts/thumbnails/font_size_12/icon.ttf'
+            copy_file 'fonts/font_size_12/icon.woff', 'vendor/assets/fonts/thumbnails/font_size_12/icon.woff'
+          end
+        when 18
+          begin
+            copy_file 'fonts/font_size_18/icon.eot', 'vendor/assets/fonts/thumbnails/font_size_18/icon.eot'
+            copy_file 'fonts/font_size_18/icon.svg', 'vendor/assets/fonts/thumbnails/font_size_18/icon.svg'
+            copy_file 'fonts/font_size_18/icon.ttf', 'vendor/assets/fonts/thumbnails/font_size_18/icon.ttf'
+            copy_file 'fonts/font_size_18/icon.woff', 'vendor/assets/fonts/thumbnails/font_size_18/icon.woff'
+          end
+        when 24
+          begin
+            copy_file 'fonts/font_size_24/icon.eot', 'vendor/assets/fonts/thumbnails/font_size_24/icon.eot'
+            copy_file 'fonts/font_size_24/icon.svg', 'vendor/assets/fonts/thumbnails/font_size_24/icon.svg'
+            copy_file 'fonts/font_size_24/icon.ttf', 'vendor/assets/fonts/thumbnails/font_size_24/icon.ttf'
+            copy_file 'fonts/font_size_24/icon.woff', 'vendor/assets/fonts/thumbnails/font_size_24/icon.woff'
+          end
+        else
+          # the same as options[:icon_size] = 12
+      end
     end
   end
 
@@ -45,11 +70,11 @@ class ThumbnailGenerator < Rails::Generators::Base
     end
 
     def get_width
-      options.width
+      options[:width]
     end
 
     def get_height
-      options.height
+      options[:height]
     end
 
     def should_be_effect_rendered(param)
@@ -58,6 +83,10 @@ class ThumbnailGenerator < Rails::Generators::Base
 
     def default_effect
       options.effects.min
+    end
+
+    def get_font_size
+      options[:icon_size] = 12 unless [12, 18, 24].include? options[:icon_size]
     end
 
 end
