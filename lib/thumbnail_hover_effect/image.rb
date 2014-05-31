@@ -14,7 +14,7 @@ module ThumbnailHoverEffect
       @url = parameters.fetch(:url, IMAGE_NOT_FOUND)
       @attributes = parameters.fetch(:attributes, {})
 
-      @url = IMAGE_NOT_FOUND unless File.extname(@url) =~/^(.png|.gif|.jpg)$/ #@url =~/^#{URI::regexp}$/ and
+      @url = IMAGE_NOT_FOUND unless File.extname(@url) =~/^(.png|.gif|.jpg)$/ #|| @url =~ /^#{URI::regexp}$/
       @attributes = {} unless @attributes.is_a?(Hash)
     end
 
