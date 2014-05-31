@@ -29,7 +29,8 @@ class ThumbnailGenerator < Rails::Generators::Base
 
     # additional functionality - generation font icons
     unless options[:disable_icons]
-      template 'font_icons.css.erb', "vendor/assets/stylesheets/thumbnails/#{get_file_name}/font_icons.css"
+      copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.css",
+                "vendor/assets/stylesheets/thumbnails/#{get_file_name}/icon#{get_font_size}.css"
 
       case get_font_size
         when 12
