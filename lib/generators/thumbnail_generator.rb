@@ -29,7 +29,7 @@ class ThumbnailGenerator < Rails::Generators::Base
 
     # additional functionality - generation font icons
     unless options[:disable_icons]
-      copy_file 'font_icons.css', "#{destination_root}/vendor/assets/stylesheets"
+      copy_file 'font_icons.css', "vendor/assets/fonts/thumbnails/#{get_file_name}"
     end
   end
 
