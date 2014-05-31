@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icon18';
-  src: url('../../font_size_18/icon18.eot?65600525');
-  src: url('../../font_size_18/icon18.eot?65600525#iefix') format('embedded-opentype'),
-       url('../../font_size_18/icon18.woff?65600525') format('woff'),
-       url('../../font_size_18/icon18.ttf?65600525') format('truetype'),
-       url('../../font_size_18/icon18.svg?65600525#icon18') format('svg');
+  src: url('../../thumbnails/font_size_18/icon18.eot?65600525');
+  src: url('../../thumbnails/font_size_18/icon18.eot?65600525#iefix') format('embedded-opentype'),
+       url('../../thumbnails/font_size_18/icon18.woff?65600525') format('woff'),
+       url('../../thumbnails/font_size_18/icon18.ttf?65600525') format('truetype'),
+       url('../../thumbnails/font_size_18/icon18.svg?65600525#icon18') format('svg');
   font-weight: normal;
   font-style: normal;
 }

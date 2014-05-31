@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icon24';
-  src: url('../../font_size_24/icon24.eot?78122512');
-  src: url('../../font_size_24/icon24.eot?78122512#iefix') format('embedded-opentype'),
-       url('../../font_size_24/icon24.woff?78122512') format('woff'),
-       url('../../font_size_24/icon24.ttf?78122512') format('truetype'),
-       url('../../font_size_24/icon24.svg?78122512#icon24') format('svg');
+  src: url('../../thumbnails/font_size_24/icon24.eot?78122512');
+  src: url('../../thumbnails/font_size_24/icon24.eot?78122512#iefix') format('embedded-opentype'),
+       url('../../thumbnails/font_size_24/icon24.woff?78122512') format('woff'),
+       url('../../thumbnails/font_size_24/icon24.ttf?78122512') format('truetype'),
+       url('../../thumbnails/font_size_24/icon24.svg?78122512#icon24') format('svg');
   font-weight: normal;
   font-style: normal;
 }
