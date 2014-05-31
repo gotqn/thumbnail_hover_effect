@@ -25,11 +25,12 @@ class ThumbnailGenerator < Rails::Generators::Base
 
     # core functionality
     template 'thumbnail.rb', "app/thumbnails/#{get_file_name}.rb"
-    template 'effects.css.sass.erb', "vendor/assets/stylesheets/thumbnails/#{get_file_name}.css.sass"
+    template 'effects.css.sass.erb', "vendor/assets/stylesheets/thumbnails/#{get_file_name}/#{get_file_name}.css.sass"
 
     # additional functionality - generation font icons
     unless options[:disable_icons]
-      copy_file 'font_icons.css', "vendor/assets/fonts/thumbnails/#{get_file_name}"
+      copy_file 'font_icons.css', "vendor/assets/stylesheets/thumbnails/#{get_file_name}/font_icons.css"
+      #copy_file 'font_icons.css', "vendor/assets/fonts/thumbnails/#{get_file_name}/font_icons.css"
     end
   end
 
