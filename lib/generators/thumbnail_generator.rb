@@ -16,7 +16,7 @@ class ThumbnailGenerator < Rails::Generators::Base
                desc: 'specifies for which of the effects css classes are generated'
 
   class_option :icons_size, type: 'numeric', default: 12, aliases: '-is',
-               desc: 'specifies the font icon size'
+               desc: 'specifies the font icons size'
 
   class_option :icons, type: 'boolean', default: true, aliases: '-i',
                desc: 'disables icons files generation'
