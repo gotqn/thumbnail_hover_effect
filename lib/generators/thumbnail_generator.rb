@@ -32,7 +32,8 @@ class ThumbnailGenerator < Rails::Generators::Base
       copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.css",
                 "vendor/assets/stylesheets/thumbnails/#{get_file_name}/icon#{get_font_size}.css"
 
-      case 18
+      @current_font_size = get_font_size
+      case @current_font_size
         when 12
           begin
             copy_file 'fonts/font_size_12/icon12.eot', 'vendor/assets/fonts/thumbnails/font_size_12/icon12.eot'
