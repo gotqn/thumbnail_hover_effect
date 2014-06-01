@@ -67,7 +67,7 @@ class ThumbnailGenerator < Rails::Generators::Base
       #(options[:effects].split(',') & ['1','2','3','4']).any? ? options[:effects].split(',').min : '1'
       #options[:effects].split(',').min
       min_effect = options[:effects].split(',').min
-      ('1'...'5').to_a.include? min_effect ? min_effect : '1'
+      (('1'...'5').to_a.include? min_effect) ? min_effect : '1'
     end
 
 end
