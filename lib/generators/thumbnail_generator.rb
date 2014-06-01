@@ -15,11 +15,12 @@ class ThumbnailGenerator < Rails::Generators::Base
   class_option :effects, type: 'array', default: [1, 2, 3, 4], aliases: '-e',
                desc: 'specifies for which of the effects css classes are generated'
 
-  class_option :icons_size, type: 'numeric', default: 12, aliases: '-s',
-               desc: 'specifies the font icons size'
-
   class_option :icons, type: 'boolean', default: true, aliases: '-i',
                desc: 'disables icons files generation'
+
+  class_option :sex, type: 'numeric', default: 12, aliases: '-s',
+               desc: 'specifies the font icons size'
+
 
   def generate_layout
 
@@ -69,12 +70,12 @@ class ThumbnailGenerator < Rails::Generators::Base
     end
 
     def get_font_size
-      #case options[:icons_size]
-        #when 12, 18, 24
-          return options[:icons_size]
-        #else
-          #return 12
-      #end
+      case options[:sex]
+        when 12, 18, 24
+          return options[:sex]
+        else
+          return 12
+      end
     end
 
 end
