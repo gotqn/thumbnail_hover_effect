@@ -58,11 +58,14 @@ class ThumbnailGenerator < Rails::Generators::Base
     end
 
     def should_be_effect_rendered(param)
-      options[:effects].split(',').include? param.to_s
+      #options[:effects].split(',').include? param.to_s
+      (options[:effects].split(',') & ('1'...'5').to_a).any? ? options[:effects].split(',') : ('1'...'5').to_a
     end
 
     def default_effect
-      options[:effects].split(',').min
+      #(options[:effects].split(',') & ['1','2','3','4']).any? ? options[:effects].split(',').min : '1'
+      #options[:effects].split(',').min
+      ('1'...'5').to_a.include? options[:effects].split(',').min ? options[:effects].split(',').min : '1'
     end
 
 end
