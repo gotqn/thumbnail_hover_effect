@@ -12,7 +12,7 @@ class ThumbnailGenerator < Rails::Generators::Base
   class_option :height, type: 'numeric', default: 216, aliases: '-h',
                desc: 'specifies image height'
 
-  class_option :effects, type: 'array', default: [1, 2, 3, 4], aliases: '--e',
+  class_option :effects, type: 'string', default: '1,2,3,4', aliases: '-e',
                desc: 'specifies for which of the effects css classes are generated'
 
   class_option :icons, type: 'boolean', default: true, aliases: '-i',
@@ -58,11 +58,11 @@ class ThumbnailGenerator < Rails::Generators::Base
     end
 
     def should_be_effect_rendered(param)
-      options[:effects].include? param
+      options[:effects].split(',').include? param
     end
 
     def default_effect
-      options[:effects].min
+      options[:effects].split(',').min
     end
 
 end
