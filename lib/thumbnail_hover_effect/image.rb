@@ -27,7 +27,7 @@ module ThumbnailHoverEffect
     def render(parameters = {})
 
       has_thumbnail = parameters.fetch(:has_thumbnail, true)
-      effect_number = parameters.fetch(:effect_number)
+      effect_number = parameters.fetch(:effect_number, false)
       thumbnail_template = self.get_template(effect_number)
 
 
