@@ -18,9 +18,6 @@ class ThumbnailGenerator < Rails::Generators::Base
   class_option :icons, type: 'boolean', default: true, aliases: '-i',
                desc: 'disables icons files generation'
 
-  class_option :icons_size, type: 'numeric', default: 12, aliases: '--size',
-               desc: 'specifies the font icons size'
-
   def generate_layout
 
     # core functionality
@@ -29,16 +26,16 @@ class ThumbnailGenerator < Rails::Generators::Base
 
     # additional functionality - generation font icons
     if options[:icons]
-      copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.css",
-                "vendor/assets/stylesheets/thumbnails/#{get_file_name}/icon#{get_font_size}.css"
-      copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.eot",
-                "vendor/assets/fonts/thumbnails/font_size_#{get_font_size}/icon#{get_font_size}.eot"
-      copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.svg",
-                "vendor/assets/fonts/thumbnails/font_size_#{get_font_size}/icon#{get_font_size}.svg"
-      copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.ttf",
-                "vendor/assets/fonts/thumbnails/font_size_#{get_font_size}/icon#{get_font_size}.ttf"
-      copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.woff",
-                "vendor/assets/fonts/thumbnails/font_size_#{get_font_size}/icon#{get_font_size}.woff"
+      copy_file 'fonts/fontello.css',
+                'vendor/assets/stylesheets/thumbnails/fontello.css'
+      copy_file 'fonts/fontello.eot',
+                'vendor/assets/fonts/thumbnails/fontello.eot'
+      copy_file 'fonts/fontello.svg',
+                'vendor/assets/fonts/thumbnails/fontello.svg'
+      copy_file 'fonts/fontello.ttf',
+                'vendor/assets/fonts/thumbnails/fontello.ttf'
+      copy_file 'fonts/fontello.woff',
+                'vendor/assets/fonts/thumbnails/fontello.woff'
     end
   end
 
@@ -66,15 +63,6 @@ class ThumbnailGenerator < Rails::Generators::Base
 
     def default_effect
       options[:effects].min
-    end
-
-    def get_font_size
-      case options[:icons_size]
-        when 12, 18, 24
-          return options[:icons_size]
-        else
-          return 12
-      end
     end
 
 end
