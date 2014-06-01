@@ -6,9 +6,9 @@ class <%= get_class_name %> < ThumbnailHoverEffect::Image
   # IMAGE_NOT_FOUND = '/images/no-image-found.jpg'
 
   # returns the html template
-  def get_template
+  def get_template(effect_number)
     "
-       <div class=\"view-<%= get_file_name %> effect0<%= default_effect %>\">
+       <div class=\"view-<%= get_file_name %> effect0#{<%= default_effect %> unless effect_number}\">
         <div>
           <span style=\"position: absolute;right: 5px;top: 10px;\"  class=\"icon-thumbs-up\">##likes##</span>
           <span style=\"position: absolute;right: 5px;top: 30px;\"class=\"icon-thumbs-down\">##dislikes##</span>
@@ -32,7 +32,7 @@ class <%= get_class_name %> < ThumbnailHoverEffect::Image
           </div>
         </div>
       </div>
-      "
+    "
   end
 
 end

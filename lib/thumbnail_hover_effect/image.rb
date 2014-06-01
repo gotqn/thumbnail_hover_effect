@@ -27,7 +27,9 @@ module ThumbnailHoverEffect
     def render(parameters = {})
 
       has_thumbnail = parameters.fetch(:has_thumbnail, true)
-      thumbnail_template = self.get_template
+      effect_number = parameters.fetch(:effect_number)
+      thumbnail_template = self.get_template(effect_number)
+
 
       if has_thumbnail
         @attributes.map { |key, value| thumbnail_template["###{key}##"] &&= value }
@@ -38,9 +40,9 @@ module ThumbnailHoverEffect
     end
 
     # returns the html template
-    def get_template
+    def get_template(effect_number)
       "
-      <div class=\"view-image effect01\">
+      <div class=\"view-image effect0#{1 unless effect_number}\">
         <div>
         <span class=\"icon-emo-happy\">##title##</span>
         <span class=\"icon-emo-happy\">##description##</span>
