@@ -18,9 +18,8 @@ class ThumbnailGenerator < Rails::Generators::Base
   class_option :icons, type: 'boolean', default: true, aliases: '-i',
                desc: 'disables icons files generation'
 
-  class_option :sex, type: 'numeric', default: 12, aliases: '-s',
+  class_option :icons_size, type: 'numeric', default: 12, aliases: '-is',
                desc: 'specifies the font icons size'
-
 
   def generate_layout
 
@@ -70,9 +69,9 @@ class ThumbnailGenerator < Rails::Generators::Base
     end
 
     def get_font_size
-      case options[:sex]
+      case options[:icons_size]
         when 12, 18, 24
-          return options[:sex]
+          return options[:icons_size]
         else
           return 12
       end
