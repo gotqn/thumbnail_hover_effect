@@ -12,13 +12,13 @@ class ThumbnailGenerator < Rails::Generators::Base
   class_option :height, type: 'numeric', default: 216, aliases: '-h',
                desc: 'specifies image height'
 
-  class_option :effects, type: 'array', default: [1, 2, 3, 4], aliases: '-e',
+  class_option :effects, type: 'array', default: [1, 2, 3, 4], aliases: '--e',
                desc: 'specifies for which of the effects css classes are generated'
 
   class_option :icons, type: 'boolean', default: true, aliases: '-i',
                desc: 'disables icons files generation'
 
-  class_option :icons_size, type: 'numeric', default: 12, aliases: '-s',
+  class_option :icons_size, type: 'numeric', default: 12, aliases: '--s',
                desc: 'specifies the font icons size'
 
   def generate_layout
