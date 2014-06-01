@@ -31,7 +31,6 @@ class ThumbnailGenerator < Rails::Generators::Base
     if options[:icons]
       copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.css",
                 "vendor/assets/stylesheets/thumbnails/#{get_file_name}/icon#{get_font_size}.css"
-
       copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.eot",
                 "vendor/assets/fonts/thumbnails/font_size_#{get_font_size}/icon#{get_font_size}.eot"
       copy_file "fonts/font_size_#{get_font_size}/icon#{get_font_size}.svg",
@@ -70,12 +69,12 @@ class ThumbnailGenerator < Rails::Generators::Base
     end
 
     def get_font_size
-      case options[:icons_size]
-        when 12, 18, 24
+      #case options[:icons_size]
+        #when 12, 18, 24
           return options[:icons_size]
-        else
-          return 12
-      end
+        #else
+          #return 12
+      #end
     end
 
 end
