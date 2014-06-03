@@ -1,7 +1,7 @@
 # ThumbnailHoverEffect
 
-Introduces simple image thumbnail 3D image hover effects using CSS 3D transforms.
-The idea is inspired by [this creat codedrops article] (http://tympanus.net/codrops/2012/06/18/3d-thumbnail-hover-effects/).
+Introduces simple thumbnail 3D image hover effects using CSS 3D transforms.
+The idea is inspired by [this great codedrops article] (http://tympanus.net/codrops/2012/06/18/3d-thumbnail-hover-effects/).
 
 
 ## Installation
@@ -26,7 +26,7 @@ In order to implement the thumbnail 3D image hover effects in your rails applica
 
 __Creating thumbnail files__ 
 
-Executing the following line in your rails application folder:
+Executing the following line in your rails application console:
 
     rails generate thumbnail class_name
 
@@ -49,7 +49,7 @@ Add the following lines in your *application.css* file:
  
 __Rendering images with thumbnail hover effect__
 
-Create a instance from the generated thumbnail class and call its *render* function like this:
+Create a instance of the generated thumbnail class and call its *render* function like this:
 
     ClassName.new(
                     {
@@ -68,7 +68,7 @@ Note:
 
 ####Using the right settings#####
 
-The gem generator is creating 3D hover effects using CSS 3D transforms. Because of this, you are not able to use the generated *CSS* files
+The gem generator is creating 3D image hover effects using CSS 3D transforms. Because of this, you are not able to use the generated *CSS* rules
 for images with different width and height.
 
 The generator uses default width and height if they are not supplied, but in most cases you will need to specify them:
@@ -82,7 +82,7 @@ or
 
 ####Thumbnail Effects#####
 
-There are four built-in thumbnail effects. By default, the generator is generating *CSS* for all of them.
+There are four built-in thumbnail effects. By default, the generator is generating *CSS* rules for all of them.
 
 1. How to generate *CSS* for specific thumbnail effect only?
 
@@ -105,7 +105,7 @@ There are four built-in thumbnail effects. By default, the generator is generati
                         }
         ).render
 
-    If you need to specify an effect you can pass it as *render* function parameter:
+   If you need to specify an effect you can pass it as *render* function parameter:
     
         ClassName.new(
                         {
@@ -116,8 +116,8 @@ There are four built-in thumbnail effects. By default, the generator is generati
 
 ####Thumbnail Template#####
 
-Creating a thumbnail *HTML* template is the key part of the thumbnail image 3D hover effect. Basically, this is the *HTML*, 
-which is shown on image hover and it can be customized to meet the developer needs.
+Creating a thumbnail *HTML* template is the key part of the thumbnail image hover 3D effect. Basically, this is the *HTML*,
+which is shown on image hover event and it can be customized to meet the developer needs.
 
 1. How to create *HTML* thumbnail template?
 
@@ -137,7 +137,6 @@ which is shown on image hover and it can be customized to meet the developer nee
               </div>
             "
           end
-        
 
 2. How to pass arguments to thumbnail template?
 
