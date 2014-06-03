@@ -144,8 +144,8 @@ which is shown on image hover event and it can be customized to meet the develop
    
         ClassName.new(
                         {
-                            url:image.image_url,
-                            attributes:{likes:'12', dislikes: '2'}
+                            url: image.image_url,
+                            attributes: {likes:'12', dislikes: '2'}
                         }
         ).render
         
