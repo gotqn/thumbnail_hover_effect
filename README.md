@@ -18,6 +18,30 @@ Or install it yourself as:
 
     $ gem install thumbnail_hover_effect
 
+## Creating demonstration thumbnail hover effect
+
+In order to get known with the thumbnail hover effect options you can create a demo thumbnail hover effect following the steps below:
+
+__Creating thumbnail files__ 
+
+Executing the following line in your rails application console:
+
+    rails generate thumbnail demo
+
+Add the following lines in your *application.css* file:
+
+    *= require thumbnails/fontello.css
+    *= require thumbnails/demo/demo.css.sass
+ 
+__Rendering images with thumbnail hover effect__
+
+Create a instances of the generated thumbnail class and call their *render* functions like this:
+
+    <%= Sex.new.render({effect_number:1}) %>
+    <%= Sex.new.render({effect_number:2}) %>
+    <%= Sex.new.render({effect_number:3}) %>
+    <%= Sex.new.render({effect_number:4}) %>
+
 ## Usage
 
 ### Basic Usage
