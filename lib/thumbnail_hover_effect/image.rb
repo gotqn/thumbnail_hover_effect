@@ -4,6 +4,7 @@ module ThumbnailHoverEffect
 
     # image use if such is not specified
     IMAGE_NOT_FOUND = '/images/no-image-found.jpg'
+    IMAGE_DEMO = '/images/demo/demo.jpg'
 
     # class attributes
     attr_accessor :url,         # image source url
@@ -11,11 +12,18 @@ module ThumbnailHoverEffect
 
     # validating input parameters and using defaults if necessary
     def initialize(parameters = {})
+      # demo mode
+      if parameters.empty?
+        @url = IMAGE_DEMO
+        @attributes = {attributes:{likes:'224', dislikes: '2', url:'#'}}
+      end
+
       @url = parameters.fetch(:url, IMAGE_NOT_FOUND)
       @attributes = parameters.fetch(:attributes, {})
 
       @url = IMAGE_NOT_FOUND unless File.extname(@url) =~/^(.png|.gif|.jpg|.jpeg|.bmp)$/
       @attributes = {} unless @attributes.is_a?(Hash)
+
     end
 
     # rendering image without thumbnail effect
