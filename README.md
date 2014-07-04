@@ -37,10 +37,10 @@ __Rendering images with thumbnail hover effect__
 
 Create a instances of the generated thumbnail class and call their *render* functions like this:
 
-    <%= Sex.new.render({effect_number:1}) %>
-    <%= Sex.new.render({effect_number:2}) %>
-    <%= Sex.new.render({effect_number:3}) %>
-    <%= Sex.new.render({effect_number:4}) %>
+    <%= Demo.new.render({effect_number:1}) %>
+    <%= Demo.new.render({effect_number:2}) %>
+    <%= Demo.new.render({effect_number:3}) %>
+    <%= Demo.new.render({effect_number:4}) %>
 
 ## Usage
 
