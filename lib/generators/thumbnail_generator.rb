@@ -9,7 +9,7 @@ class ThumbnailGenerator < Rails::Generators::Base
   class_option :width, type: 'numeric', default: 300, aliases: '-w',
                desc: 'specifies image width'
 
-  class_option :height, type: 'numeric', default: 216, aliases: '-h',
+  class_option :height, type: 'numeric', default: 200, aliases: '-h',
                desc: 'specifies image height'
 
   class_option :effects, type: 'string', default: '1,2,3,4', aliases: '-e',
