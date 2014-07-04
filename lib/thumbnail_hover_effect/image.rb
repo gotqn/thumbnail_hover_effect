@@ -3,8 +3,8 @@ module ThumbnailHoverEffect
   class Image
 
     # image use if such is not specified
-    IMAGE_NOT_FOUND = '/images/no-image-found.jpg'
-    IMAGE_DEMO = '/images/demo/demo.jpg'
+    IMAGE_NOT_FOUND = '/assets/no-image-found.jpg'
+    IMAGE_DEMO = '/assets/demo.jpg'
 
     # class attributes
     attr_accessor :url,         # image source url
