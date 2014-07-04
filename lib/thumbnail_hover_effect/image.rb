@@ -14,8 +14,10 @@ module ThumbnailHoverEffect
     def initialize(parameters = {})
       # demo mode
       if parameters.empty?
-        @url = IMAGE_DEMO
-        @attributes = {attributes:{likes:'224', dislikes: '2', url:'#'}}
+        parameters = {
+            url: IMAGE_DEMO,
+            attributes:{likes:'224', dislikes: '2', url:'#'}
+        }
       end
 
       @url = parameters.fetch(:url, IMAGE_NOT_FOUND)
